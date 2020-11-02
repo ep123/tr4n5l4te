@@ -31,7 +31,7 @@ module Tr4n5l4te
 
     def load_cookies(cookie_file)
       return false unless cookie_hash = YAML.safe_load(
-        File.read(cookie_file), permitted_classes: [Capybara::Poltergeist::Cookie]
+        File.read(cookie_file), [Capybara::Poltergeist::Cookie]
       )
 
       browser.driver.clear_cookies
